@@ -18,5 +18,4 @@ alias nord='python ~/.config/ImageGoNord/src/cli.py'
 alias nordify='autonordtheme-temp.sh'
 alias nordkeep='autonordtheme.sh'
 alias nordrm='autonordtheme-delete.sh'
-alias nordtheme='nordtheme.sh'
 
