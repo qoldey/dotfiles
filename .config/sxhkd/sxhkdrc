@@ -20,6 +20,9 @@ super + Escape
 #USER HOTKEYS
 #
 
+alt + p 
+	colors.sh
+
 Print
 	maim -s | xclip -selection clipboard -t image/png
 
