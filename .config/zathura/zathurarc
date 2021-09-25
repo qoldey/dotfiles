@@ -17,7 +17,6 @@ set statusbar-fg '#a8a8a8'
 set notification-bg '#11171d'
 set notification-fg '#a8a8a8'
 
-set smooth-scroll true
-
 set selection-clipboard clipboard
 
+set sandbox none
