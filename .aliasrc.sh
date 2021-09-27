@@ -1,7 +1,7 @@
 alias \
 	yt="youtube-dl --add-metadata -i -o '~/Media/Video/Youtube/%(title)s.%(ext)s' " \
 	yta="youtube-dl --embed-thumbnail -i -x --audio-format mp3 -o '~/Media/Music/Downloads/%(title)s.%(ext)s' " \
-	spotdla="cd ~/Media/Music/Downloads/ && spotdl" \
+	spotdl="cd ~/Media/Music/Downloads/ && spotdl" \
 	\
 	ls='ls --color=auto --group-directories-first' \
 	aliasrc='vim ~/.aliasrc.sh' \
@@ -12,6 +12,8 @@ alias \
 	startpage='vim ~/github/startpage/index.html' \
 	bspwmrc="vim ~/.config/bspwm/bspwmrc" \
 	\
+	shrug="echo '¯\_(ツ)_/¯' && echo '¯\_(ツ)_/¯' | xclip -selection clipboard" \
+	adba='adb.sh' \
 	bonsai='cbonsai --live' \
 	color='colors.sh' \
 	neofetch='clear && neofetch' \
