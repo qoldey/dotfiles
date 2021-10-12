@@ -22,3 +22,4 @@ set autochdir
 map <C-p> :!zathura --fork %:t:r.pdf<CR><CR>
 map <C-w> :w!<CR> :!pdflatex %<CR><CR> 
 map <C-b> :w!<CR> :!biber %:t:r<CR><CR>
+map <C-s> :w!<CR> :!./%<CR><CR>

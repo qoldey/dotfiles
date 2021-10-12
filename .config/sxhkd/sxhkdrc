@@ -24,13 +24,20 @@ alt + {_,shift + }Tab
 	bspc node -f {next,prev}.local.!hidden.window	
 
 alt + p 
+	wal -i ~/Wallpapers/ -a 95; wal-discord -t [-b wal]; rsync -uvr ~/dev/www/skybox/colors.css root@kabina.xyz:/usr/share/nginx/skybox/
 	colors.sh
 
 Print
-	maim -s | xclip -selection clipboard -t image/png
+	maim -su | tee ~/Media/Pictures/screenshots/$(date +%s).png | xclip -selection clipboard -t image/png
 
 super + Print
-	maim -s ~/Media/Pictures/screenshots/$(date +%s).png
+	maim | tee ~/Media/Pictures/screenshots/$(date +%s).png | xclip -selection clipboard -t image/png
+
+ctrl + Print
+	maim -i $(xdotool getactivewindow) | tee ~/Media/Pictures/screenshots/$(date +%s).png | xclip -selection clipboard -t image/png
+
+alt + Print
+	maim -su | xclip -selection clipboard -t image/png
 
 #CMUS-REMOTE
 XF86AudioPlay
