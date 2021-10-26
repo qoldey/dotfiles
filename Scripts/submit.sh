@@ -11,10 +11,16 @@ fi
 
 cd $file
 
-mv .vscode README.md .git lib $dir.jar .. 2> /dev/null
+mv .vscode README.md .git lib  $dir.jar .. 2> /dev/null
+
+#TODO: if $PWD/lib/* exists,
+#mv ../lib . 2> /dev/null
+#cp ~/dev/school/add/lib/.classpath .
+#sed -i "s/path=\"lib\"/path=\"lib\/$(basename $PWD/lib/*)\"/g" .classpath
+
+cp ~/dev/school/add/.classpath .
 
 cp ~/dev/school/add/.project .
-cp ~/dev/school/add/.classpath .
 cp -r ~/dev/school/add/.settings .
 sed -i "s/Project/$dir/g" .project
 
@@ -32,3 +38,7 @@ mv .vscode README.md .git lib $dir.jar $file 2> /dev/null
 cd $file
 rm .project .classpath 
 rm -rf .settings
+
+cd ..
+git add .
+git commit -m "Created $file"

@@ -24,5 +24,5 @@ bspc config active_border_color "$color2"
 bspc config focused_border_color "$color15"
 
 $HOME/.config/polybar/hack/launch.sh
-screen -q -r -D cmus || screen -S cmus $(which --skip-alias cmus)
-redshift
+#screen -q -r -D cmus || screen -S cmus $(which --skip-alias cmus)
+#redshift &

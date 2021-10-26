@@ -20,11 +20,17 @@ super + Escape
 #USER HOTKEYS
 #
 
+button11
+	process="$(pidof /usr/bin/gromit-mpx)"; if [ -z $process ]; then gromit-mpx -a; else sudo kill -15 $process; fi
+
+F7
+	process="$(pidof /usr/bin/gromit-mpx)"; if [ -z $process ]; then gromit-mpx -a; else sudo kill -15 $process; fi
+
 alt + {_,shift + }Tab
 	bspc node -f {next,prev}.local.!hidden.window	
 
 alt + p 
-	wal -i ~/Wallpapers/ -a 95; wal-discord -t [-b wal]; rsync -uvr ~/dev/www/skybox/colors.css root@kabina.xyz:/usr/share/nginx/skybox/
+	wal -i ~/Wallpapers/ -a 95; wal-discord -t [-b wal]; rsync -uvr ~/dev/www/skybox/colors.css root@kabina.xyz:/usr/share/nginx/skybox/; rsync -v -e 'ssh -p 8022' ~/.cache/wal/colors-tty.sh ~/.cache/wal/sequences 192.168.1.132:.cache/wal/
 	colors.sh
 
 Print
@@ -39,17 +45,24 @@ ctrl + Print
 alt + Print
 	maim -su | xclip -selection clipboard -t image/png
 
-#CMUS-REMOTE
 XF86AudioPlay
+	mpc toggle
 	cmus-remote -u
 XF86AudioPrev
+	mpc prev
 	cmus-remote -r
 XF86AudioNext
+	mpc next
 	cmus-remote -n
 XF86AudioLowerVolume
+	mpc volume -5
 	cmus-remote -v -10%
 XF86AudioRaiseVolume
+	mpc volume +5
 	cmus-remote -v +10%
+# mpc add /
+# mpc shuffle
+
 
 #
 # bspwm hotkeys

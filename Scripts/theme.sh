@@ -4,7 +4,7 @@ Random(){
 echo $(grep -Po "s/\K.*" ~/.cache/wal/wal) > ~/.cache/wallpaper.last
 echo "Setting wal..."
 if wal -q -a 95 -i ~/Wallpapers/ ; then
-        wal-discord -t
+       wal-discord -t
         echo "Set: $(grep -Po "s/\K.*" ~/.cache/wal/wal)"
 else
         echo "Failed: $(grep -Po "s/\K.*" ~/.cache/wal/wal)"
@@ -19,7 +19,7 @@ cd ~/Wallpapers
 read -e -p 'Wallpaper: ' wal
 echo "Setting wal..."
 if wal -q -a 95 -i $wal ; then
-        wal-discord -t
+       ~/Scripts/Apps/wal-discord/wal-discord -t
         echo "Set: $(grep -Po "s/\K.*" ~/.cache/wal/wal)"
 else
         echo "Failed: $(grep -Po "s/\K.*" ~/.cache/wal/wal)"
@@ -35,7 +35,7 @@ if python ~/.config/ImageGoNord/src/cli.py -q -b --img="$HOME/Wallpapers/$(grep 
 	echo "~/Wallpapers/nord/$(grep -Po "s/\K.*" ~/.cache/wal/wal)-nord.png created"
 	echo "Setting wal..."
 	if wal -q -a 95 -i ~/Wallpapers/nord/$(grep -Po "s/\K.*" ~/.cache/wal/wal)-nord.png ; then
-		wal-discord -t
+       ~/Scripts/Apps/wal-discord/wal-discord -t
 	        echo "Set: $(grep -Po "s/\K.*" ~/.cache/wal/wal)"		
 	else
 		echo "Failed: $(grep -Po "s/\K.*" ~/.cache/wal/wal)"
@@ -51,7 +51,7 @@ Last(){
 echo "Setting last wal..."
 if wal -q -a 95 -i ~/Wallpapers/$(echo "$(<~/.cache/wallpaper.last)") ; then
 #if wal -q -R ; then #wal -R doesn't seem to be working ATM.
-        wal-discord -t
+       ~/Scripts/Apps/wal-discord/wal-discord -t
         echo "Set: $(grep -Po "s/\K.*" ~/.cache/wal/wal)"
 else    
         echo "Failed: $(grep -Po "s/\K.*" ~/.cache/wal/wal)"
