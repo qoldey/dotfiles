@@ -30,7 +30,7 @@ alt + {_,shift + }Tab
 	bspc node -f {next,prev}.local.!hidden.window	
 
 alt + p 
-	wal -i ~/Wallpapers/ -a 95; wal-discord -t [-b wal]; rsync -uvr ~/dev/www/skybox/colors.css root@kabina.xyz:/usr/share/nginx/skybox/; rsync -v -e 'ssh -p 8022' ~/.cache/wal/colors-tty.sh ~/.cache/wal/sequences 192.168.1.132:.cache/wal/
+	~/Scripts/theme.sh; rsync -uvr ~/dev/www/skybox/colors.css root@kabina.xyz:/usr/share/nginx/skybox/; rsync -v -e 'ssh -p 8022' ~/.cache/wal/colors-tty.sh ~/.cache/wal/sequences 192.168.1.132:.cache/wal/
 	colors.sh
 
 Print

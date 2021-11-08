@@ -5,7 +5,9 @@ alias \
 	spotdl="spotdl -o ~/Media/Music/Downloads/" \
 	\
 	mnt='sudo mount' \
-	pico='sudo minicom -o -D /dev/ttyACM0' \
+	pico='sudo minicom -o --term=linux -D /dev/ttyACM*' \
+	vpico='sudo vim /mnt/pico/code.py' \
+	lss="find . -maxdepth 1 -type l -ls | cut -c$(expr length "$USER" "*" 2 + 65 )-" \
 	ls='ls --color=auto --group-directories-first' \
 	sp='sudo pacman' \
 	sps='sudo pacman -S' \
@@ -14,7 +16,6 @@ alias \
 	sr='sudo ranger .' \
 	src='source ~/.bashrc' \
 	shh="cd ~/Scripts && touch script.sh; chmod +x script.sh; echo $'#/bin/sh\n\n' >> script.sh; vim +3 script.sh;" \
-	her='espeak-ng -a 50 -g 5ms -s 175 -p 40 -v her -w output.wav -f' \
 	\
 	cdr="cd $1 && ranger" \
 	conf='cd ~/.config/ && ranger' \

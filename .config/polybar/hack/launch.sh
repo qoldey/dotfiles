@@ -14,13 +14,14 @@ while pgrep -u $UID -x polybar >/dev/null; do sleep 1; done
 
 if type "xrandr"; then
        for m in $(xrandr --query | grep " connected" | cut -d" " -f1); do
-                MONITOR=$m polybar --reload -q top -c "$DIR/config.ini" &
-        #       MONITOR=$m polybar --reload -q bottom -c "$DIR/config.ini" & 
+                MONITOR=$m polybar --reload -q top1 -c "$DIR/config.ini" &
 	            
-		MONITOR=$m polybar --reload -q top2 -c "$DIR/config.ini" &
-	#	MONITOR=$m polybar --reload -q bottom2 -c "$DIR/config.ini" &
+		MONITOR=$m polybar --reload -q bottom1 -c "$DIR/config.ini" &
+		
+		MONITOR=$m polybar --reload -q bottom2 -c "$DIR/config.ini" &
 		 done
 	else
-	    polybar --reload -q main -c "$DIR/config.ini" &
-	    polybar --reload -q secondary -c "$DIR/config.ini" &
+	    polybar --reload -q first -c "$DIR/config.ini" &
+	    polybar --reload -q second -c "$DIR/config.ini" &
+	    polybar --reload -q third -c "$DIR/config.ini" &
 	fi

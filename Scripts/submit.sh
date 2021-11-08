@@ -11,14 +11,18 @@ fi
 
 cd $file
 
-mv .vscode README.md .git lib  $dir.jar .. 2> /dev/null
+mv .vscode README.md .git  $dir.jar .. 2> /dev/null
 
-#TODO: if $PWD/lib/* exists,
-#mv ../lib . 2> /dev/null
-#cp ~/dev/school/add/lib/.classpath .
-#sed -i "s/path=\"lib\"/path=\"lib\/$(basename $PWD/lib/*)\"/g" .classpath
-
-cp ~/dev/school/add/.classpath .
+files=$(shopt -s nullglob dotglob; echo $PWD/lib/*)
+if (( ${#files} ))
+#if lib contains files
+then
+	cp ~/dev/school/add/lib/.classpath .
+	sed -i "s/path=\"lib\"/path=\"lib\/$(basename $PWD/lib/*)\"/g" .classpath
+else
+	cp ~/dev/school/add/.classpath .
+	mv lib .. 2> /dev/null
+fi
 
 cp ~/dev/school/add/.project .
 cp -r ~/dev/school/add/.settings .
@@ -42,3 +46,5 @@ rm -rf .settings
 cd ..
 git add .
 git commit -m "Created $file"
+ln -f -s $PWD/$file/src/*.java ../sourcecode/
+#Manually add all before week 7
