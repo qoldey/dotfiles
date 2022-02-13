@@ -43,8 +43,17 @@ cd $file
 rm .project .classpath 
 rm -rf .settings
 
+if (( ${#files} ))
+#if lib contains files
+then
+#files=$(cp lib/* ../../../src/lib/)
+#mv -i $files ..
+#ln -s "$files" "lib/"
+echo "make a function to move these to src/lib and symlink new locale here"
+fi
+
 cd ..
 git add .
 git commit -m "Created $file"
-ln -f -s $PWD/$file/src/*.java ../sourcecode/
+ln -f -s $PWD/$file/src/*.java ../code/
 #Manually add all before week 7

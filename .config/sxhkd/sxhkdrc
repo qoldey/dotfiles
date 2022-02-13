@@ -8,6 +8,7 @@ super + Return
 
 # program launcher
 super + @space
+	rofi -show drun -run-shell-command '{terminal} -e bash -ic "{cmd} && read"'
 	rofi -show run
 	rofi -show drun
 	
@@ -20,6 +21,12 @@ super + Escape
 #USER HOTKEYS
 #
 
+alt + o
+	/home/uzel/Scripts/output.sh
+
+super + l
+        betterlockscreen -l dim
+
 button11
 	process="$(pidof /usr/bin/gromit-mpx)"; if [ -z $process ]; then gromit-mpx -a; else sudo kill -15 $process; fi
 
@@ -30,7 +37,7 @@ alt + {_,shift + }Tab
 	bspc node -f {next,prev}.local.!hidden.window	
 
 alt + p 
-	~/Scripts/theme.sh; rsync -uvr ~/dev/www/skybox/colors.css root@kabina.xyz:/usr/share/nginx/skybox/; rsync -v -e 'ssh -p 8022' ~/.cache/wal/colors-tty.sh ~/.cache/wal/sequences 192.168.1.132:.cache/wal/
+	~/Scripts/theme.sh
 	colors.sh
 
 Print
